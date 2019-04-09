@@ -11,9 +11,13 @@ public class Main{
 
     private static synchronized void generateEmails(int numberOfEmails) {
         Fairy fairy = Fairy.create();
+        try {
+            sender.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         sender.start();
         for (int i = 0; i < numberOfEmails; i++) {
-            System.out.println("receiving email: " + i);
             new EmailDownloader(fairy, "mailDistributor NO" + i, sender).start();
         }
     }

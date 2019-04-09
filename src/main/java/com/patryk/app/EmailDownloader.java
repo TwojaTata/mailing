@@ -20,6 +20,7 @@ public class EmailDownloader extends Thread {
     public void run() {
         synchronized (this) {
             String email = (fairy.person().getEmail());
+            System.out.println("receiving email: " + email);
             sender.setEmail(email);
         }
     }

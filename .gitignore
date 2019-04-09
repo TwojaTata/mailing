@@ -1,4 +1,4 @@
-# compiled class file #
+# compiled class files #
 *.class
 
 # libraries #
@@ -21,3 +21,5 @@ estymaty.md
 
 # Log file
 *.log
+
+target/generated-sources/
